@@ -41,6 +41,13 @@ ROOT_LINKER_LIBRARY(Event Event.cxx EventDict.cxx LIBRARIES Hist MathCore)
 ROOT_EXECUTABLE(eventexe MainEvent.cxx LIBRARIES Event RIO Tree Hist Net)
 ROOT_ADD_TEST(test-event COMMAND eventexe)
 
+#---dummy-------------------------------------------------------------------------------------
+ROOT_GENERATE_DICTIONARY(DummyDict ${CMAKE_CURRENT_SOURCE_DIR}/Dummy.h MODULE Dummy LINKDEF DummyLinkDef.h)
+ROOT_LINKER_LIBRARY(Dummy Dummy.cxx DummyDict.cxx LIBRARIES Hist MathCore)
+
+ROOT_EXECUTABLE(dummyexe MainDummy.cxx LIBRARIES Dummy RIO Tree Hist Net)
+ROOT_ADD_TEST(test-dummy COMMAND dummyexe)
+
 #---hsimple------------------------------------------------------------------------------------
 #ROOT_EXECUTABLE(hsimple hsimple.cxx LIBRARIES RIO Tree Hist)
 #ROOT_ADD_TEST(test-hsimple COMMAND hsimple)
