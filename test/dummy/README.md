@@ -1,6 +1,6 @@
-# Project Title
+# LZ4 vs. ZLIB in ROOT
 
-LZ4 vs. ZLIB in ROOT
+In this project, we compare two compression algorithms - ZLIB and LZ4 - on ROOT files. We evaluate performance in three metrics: compressing time, decompressing time and compression ratio. In addition, we test how much the compression layer contributes to the total CPU cycles in ROOT.
 
 ## Test Setup
 
